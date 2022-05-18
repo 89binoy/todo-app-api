@@ -16,10 +16,10 @@ const TodoList = (props) => {
             method: 'DELETE'
         })
         .then(()=>{
-            props.fetchTodoList();
-            // fetch('http://localhost:3000/todoList')
-            // .then(res=> res.json())
-            // .then(data=>props.setTodoList(data))
+            // props.fetchTodoList();
+            fetch('http://localhost:3000/todoList')
+            .then(res=> res.json())
+            .then(data=>props.setTodoList(data))
         })
         // const newTodoList = props.todoList.filter((item) => item.id !== id);
         // props.setTodoList(newTodoList);

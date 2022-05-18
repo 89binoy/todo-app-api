@@ -12,15 +12,15 @@ const InputSection = (props) => {
             method: 'POST',
             body: JSON.stringify(newTodo),
             headers: {
-              'Content-type': 'application/json' 
+              'Content-type' : 'application/json' 
             },
           })
           .then(response=> response.json)
           .then(()=>{
-            props.fetchTodoList();
-            // fetch('http://localhost:3000/todoList')
-            // .then(res=> res.json())
-            // .then(data=>props.setTodoList(data))
+            // props.fetchTodoList();
+            fetch('http://localhost:3000/todoList')
+            .then(res=> res.json())
+            .then(data=>props.setTodoList(data))
           })
 
           // props.setTodoList([...props.todoList, newTodo]);
@@ -43,10 +43,10 @@ const InputSection = (props) => {
               body: JSON.stringify(updateableObj)
             })
             .then(()=>{
-              props.fetchTodoList();
-            //   fetch(`http://localhost:3000/todoList`)
-            // .then(response=> response.json())
-            // .then(data=>props.setTodoList(data))
+              // props.fetchTodoList();
+              fetch(`http://localhost:3000/todoList`)
+            .then(response=> response.json())
+            .then(data=>props.setTodoList(data))
             })
             props.setEditMode(false);
             props.setTodoTitle("");

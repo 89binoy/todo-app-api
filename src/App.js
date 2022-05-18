@@ -13,8 +13,9 @@ function App() {
     fetch("http://localhost:3000/todoList")
     .then((response)=>response.json())
     .then(data=> setTodoList(data))
-
   }
+
+
   useEffect(()=>{
     fetchTodoList();
     // fetch("http://localhost:3000/todoList")
